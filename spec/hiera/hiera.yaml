@@ -3,7 +3,7 @@
   - yaml
 :hierarchy:
   - "os/%{::osfamily}"
-  - common
   - testing
+  - common
 :yaml:
   :datadir: 'data'

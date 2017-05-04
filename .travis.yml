@@ -7,19 +7,19 @@ matrix:
   fast_finish: true
   include:
   - rvm: 2.1.9
-    env: PUPPET_VERSION="4.6.1" STRICT_VARIABLES="yes" CHECK="rubocop"
+    env: STRICT_VARIABLES="yes" CHECK="rubocop"
     bundler_args: --without testing acceptance
   - rvm: 2.1.9
-    env: PUPPET_VERSION="4.6.1" STRICT_VARIABLES="yes" CHECK="lint"
+    env: STRICT_VARIABLES="yes" CHECK="lint"
     bundler_args: --without rubocop acceptance
   - rvm: 2.1.9
-    env: PUPPET_VERSION="4.6.1" STRICT_VARIABLES="yes" CHECK="validate"
+    env: STRICT_VARIABLES="yes" CHECK="validate"
     bundler_args: --without rubocop acceptance
   - rvm: 2.1.9
-    env: PUPPET_VERSION="4.6.1" STRICT_VARIABLES="yes" CHECK="spec"
+    env: STRICT_VARIABLES="yes" CHECK="spec"
     bundler_args: --without rubocop acceptance
   - rvm: 2.1.9
-    env: PUPPET_VERSION="4.6.1" STRICT_VARIABLES="yes" CHECK="beaker"
+    env: STRICT_VARIABLES="yes" CHECK="beaker"
     bundler_args: --without rubocop
     services: docker
     sudo: required

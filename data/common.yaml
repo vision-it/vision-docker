@@ -1,4 +1,4 @@
 ---
 vision_docker::listen_address: 0.0.0.0
 vision_docker::listen_port: 2375
-vision_docker::compose_version: 1.6.2
+vision_docker::compose_version: 1.13.0

@@ -29,7 +29,13 @@ class vision_docker (
 ) {
 
   class { '::docker':
-    tcp_bind     => "tcp://${listen_address}:${listen_port}",
+    tcp_bind                => "tcp://${listen_address}:${listen_port}",
+    package_source_location => '[arch=amd64] https://download.docker.com/linux/debian',
+    package_key             => '9DC858229FC7DD38854AE2D88D81803C0EBFCD88',
+    package_key_source      => 'https://download.docker.com/linux/debian/gpg',
+    package_release         => $::lsbdistcodename,
+    package_name            => 'docker-ce',
+    package_repos           => 'edge',
   }
 
   class { '::docker::compose':

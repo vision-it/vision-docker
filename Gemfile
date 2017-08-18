@@ -18,7 +18,7 @@ group :testing do
 end
 
 group :acceptance do
-  gem 'beaker-rspec', '5.6.0'
+  gem 'beaker-rspec', '6.1.0'
   gem 'serverspec', '2.40.0'
   gem 'specinfra', '2.70.1'
 end

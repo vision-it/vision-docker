@@ -41,4 +41,27 @@ class vision_docker (
   class { '::docker::compose':
     version => $compose_version
   }
+
+    file { '/etc/systemd/system/docker-system-prune.service':
+    ensure  => present,
+    content => template('vision_docker/docker-system-prune.service.erb'),
+    notify  => Service['docker-system-prune'],
+  }
+
+  file { '/etc/systemd/system/docker-system-prune.timer':
+    ensure  => present,
+    content => template('vision_docker/docker-system-prune.timer.erb'),
+    notify  => Service['docker-system-prune'],
+  }
+
+  service { 'docker-system-prune':
+    ensure  => running,
+    enable  => true,
+    name    => 'docker-system-prune.timer',
+    require => [
+                File['/etc/systemd/system/docker-system-prune.timer'],
+                File['/etc/systemd/system/docker-system-prune.service'],
+                ],
+  }
+
 }

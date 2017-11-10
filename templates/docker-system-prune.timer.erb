@@ -1,0 +1,8 @@
+[Unit]
+Description=Cleanup unused images and stopped docker containers daily
+
+[Timer]
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target

@@ -26,6 +26,8 @@ class vision_docker (
   String  $listen_address,
   Integer $listen_port,
   String  $compose_version,
+  String  $package_name,
+  String  $package_channel,
 ) {
 
   class { '::docker':
@@ -34,8 +36,8 @@ class vision_docker (
     package_key             => '9DC858229FC7DD38854AE2D88D81803C0EBFCD88',
     package_key_source      => 'https://download.docker.com/linux/debian/gpg',
     package_release         => $::lsbdistcodename,
-    package_name            => 'docker-ce',
-    package_repos           => 'edge',
+    package_name            => $package_name,
+    package_repos           => $package_channel,
   }
 
   class { '::docker::compose':

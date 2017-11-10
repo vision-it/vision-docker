@@ -19,8 +19,9 @@ describe 'vision_docker' do
                             )
         end
         it { is_expected.to contain_class('docker::compose') }
-        it { is_expected.to contain_file('/etc/systemd/system/docker-system-prune.service').with_content('[Service]') }
-        it { is_expected.to contain_file('/etc/systemd/system/docker-system-prune.timer').with_content('[Timer]') }
+        it { is_expected.to contain_file('/etc/systemd/system/docker-system-prune.service').with_content(/[Service]/) }
+        it { is_expected.to contain_file('/etc/systemd/system/docker-system-prune.timer').with_content(/[Timer]/) }
+        it { is_expected.to contain_service('docker-system-prune') }
       end
     end
   end

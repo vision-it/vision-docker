@@ -1,28 +1,33 @@
 sudo: false
 language: ruby
 cache: bundler
+rvm: 2.3.4
 script:
   - 'bundle exec rake $CHECK'
 matrix:
   fast_finish: true
+  allow_failures:
+    - env: STRICT_VARIABLES="yes" CHECK="beaker" BEAKER_set="debian9"
+      bundler_args: --without rubocop
+      services: docker
+      sudo: required
   include:
-  - rvm: 2.1.9
-    env: STRICT_VARIABLES="yes" CHECK="rubocop"
-    bundler_args: --without testing acceptance
-  - rvm: 2.1.9
-    env: STRICT_VARIABLES="yes" CHECK="lint"
-    bundler_args: --without rubocop acceptance
-  - rvm: 2.1.9
-    env: STRICT_VARIABLES="yes" CHECK="validate"
-    bundler_args: --without rubocop acceptance
-  - rvm: 2.1.9
-    env: STRICT_VARIABLES="yes" CHECK="spec"
-    bundler_args: --without rubocop acceptance
-  - rvm: 2.1.9
-    env: STRICT_VARIABLES="yes" CHECK="beaker"
-    bundler_args: --without rubocop
-    services: docker
-    sudo: required
+    - env: STRICT_VARIABLES="yes" CHECK="beaker" BEAKER_set="debian9"
+      bundler_args: --without rubocop
+      services: docker
+      sudo: required
+    - env: STRICT_VARIABLES="yes" CHECK="rubocop"
+      bundler_args: --without testing acceptance
+    - env: STRICT_VARIABLES="yes" CHECK="lint"
+      bundler_args: --without rubocop acceptance
+    - env: STRICT_VARIABLES="yes" CHECK="validate"
+      bundler_args: --without rubocop acceptance
+    - env: STRICT_VARIABLES="yes" CHECK="spec"
+      bundler_args: --without rubocop acceptance
+    - env: STRICT_VARIABLES="yes" CHECK="beaker"
+      bundler_args: --without rubocop
+      services: docker
+      sudo: required
 notifications:
   email: false
   slack:

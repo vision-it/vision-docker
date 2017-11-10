@@ -18,7 +18,10 @@ group :testing do
 end
 
 group :acceptance do
+  gem 'bcrypt_pbkdf', '1.0.0'
   gem 'beaker-rspec', '6.1.0'
+  gem 'rbnacl', '4.0.2'
+  gem 'rbnacl-libsodium', '1.0.13'
   gem 'serverspec', '2.40.0'
   gem 'specinfra', '2.70.1'
 end

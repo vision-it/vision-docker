@@ -8,7 +8,7 @@ gem 'rake', '12.0.0'
 gem 'rspec-puppet', '2.6.7'
 
 group :rubocop do
-  gem 'rubocop', '0.47.0'
+  gem 'rubocop', '0.51.0'
   gem 'rubocop-rspec', '1.10.0'
 end
 
@@ -19,6 +19,7 @@ end
 
 group :acceptance do
   gem 'bcrypt_pbkdf', '1.0.0'
+  gem 'beaker', '3.28.0'
   gem 'beaker-rspec', '6.1.0'
   gem 'rbnacl', '4.0.2'
   gem 'rbnacl-libsodium', '1.0.13'

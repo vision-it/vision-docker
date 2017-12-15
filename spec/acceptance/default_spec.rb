@@ -22,7 +22,7 @@ describe 'vision_docker' do
       end
     end
 
-    context 'Prone' do
+    context 'Prune' do
       describe file('/etc/systemd/system/docker-system-prune.timer') do
         it { is_expected.to be_file }
         its(:content) { is_expected.to match 'daily' }

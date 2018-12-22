@@ -15,7 +15,7 @@ describe 'vision_docker' do
       context 'contains' do
         it do
           is_expected.to contain_class('docker').with(
-                              'tcp_bind' => 'tcp://0.0.0.0:2375'
+                              'tcp_bind' => 'tcp://10.0.0.0:1234'
                             )
         end
         it { is_expected.to contain_file('/etc/systemd/system/docker-system-prune.service').with_content(/[Service]/) }

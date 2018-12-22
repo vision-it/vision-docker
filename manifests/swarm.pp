@@ -14,6 +14,8 @@ class vision_docker::swarm (
 
 ) {
 
+  contain vision_docker
+
   docker::swarm { "swarm_${hostname}":
     init           => $init,
     join           => $join,

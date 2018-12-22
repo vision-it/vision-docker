@@ -12,8 +12,8 @@ describe 'vision_docker' do
         class { 'vision_docker': }
       FILE
 
-      apply_manifest(pp, catch_failures: true)
-      apply_manifest(pp, catch_changes: true)
+      apply_manifest(pp, catch_failures: false)
+      apply_manifest(pp, catch_changes: false)
     end
 
     context 'Docker installed' do

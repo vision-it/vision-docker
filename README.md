@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/vision-it/vision-docker.svg?branch=production)](https://travis-ci.org/vision-it/vision-docker)
 
-
 ## Usage
 
 Include in the *Puppetfile*:

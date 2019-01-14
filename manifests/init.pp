@@ -4,11 +4,14 @@ class vision_docker (
 
   String  $listen_address,
   Integer $listen_port,
+  Optional[String] $version = 'latest',
 
 ) {
 
   class { '::docker':
-    tcp_bind => "tcp://${listen_address}:${listen_port}"
+    tcp_bind             => "tcp://${listen_address}:${listen_port}",
+    version              => $version,
+    apt_source_pin_level => 100,
   }
 
   # Job for cleaning up unused Images

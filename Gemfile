@@ -1,15 +1,15 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
-puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : ['5.0.1']
+puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : ['5.3.7']
 gem 'puppet', puppetversion
 
-gem 'puppetlabs_spec_helper', '2.3.1'
-gem 'rake', '12.0.0'
-gem 'rspec-puppet', '2.6.7'
+gem 'puppetlabs_spec_helper', '2.13.1'
+gem 'rake', '12.3.2'
+gem 'rspec-puppet', '2.7.3'
 
 group :rubocop do
-  gem 'rubocop', '0.51.0'
-  gem 'rubocop-rspec', '1.10.0'
+  gem 'rubocop', '0.65.0'
+  gem 'rubocop-rspec', '1.32.0'
 end
 
 group :testing do
@@ -18,13 +18,13 @@ group :testing do
 end
 
 group :acceptance do
-  gem 'bcrypt_pbkdf', '1.0.0'
-  gem 'beaker', '3.28.0'
-  gem 'beaker-rspec', '6.1.0'
-  gem 'rbnacl', '4.0.2'
-  gem 'rbnacl-libsodium', '1.0.13'
-  gem 'serverspec', '2.40.0'
-  gem 'specinfra', '2.70.1'
+  gem 'rbnacl', '< 5.0', :require => false
+  gem 'rbnacl-libsodium', :require => false
+  gem 'bcrypt_pbkdf', '< 2.0', :require => false
+  gem 'beaker', '3.37.0'
+  gem 'beaker-rspec', '6.2.4'
+  gem 'serverspec', '2.41.3'
+  gem 'specinfra', '2.76.9'
 end
 
 group :development do

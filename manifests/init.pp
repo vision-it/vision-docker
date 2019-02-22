@@ -7,8 +7,17 @@ class vision_docker (
 
 ) {
 
+  file { '/etc/docker/':
+    ensure  => directory,
+  }
+  ->file { '/etc/docker/daemon.json':
+    ensure  => present,
+    content => file('vision_docker/daemon.json'),
+  }
+
   class { '::docker':
-    tcp_bind => "tcp://${listen_address}:${listen_port}"
+    tcp_bind => "tcp://${listen_address}:${listen_port}",
+    require  => File['/etc/docker/daemon.json']
   }
 
   # Job for cleaning up unused Images

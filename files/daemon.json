@@ -1,0 +1,4 @@
+{
+        "userland-proxy": false,
+        "no-new-privileges": true
+}

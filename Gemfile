@@ -21,8 +21,10 @@ group :acceptance do
   gem 'rbnacl', '< 5.0', :require => false
   gem 'rbnacl-libsodium', :require => false
   gem 'bcrypt_pbkdf', '< 2.0', :require => false
-  gem 'beaker', '3.37.0'
+  gem 'beaker', '4.6.0'
+  gem 'beaker-docker', '0.5.2'
   gem 'beaker-rspec', '6.2.4'
+  gem "beaker-puppet_install_helper", :require => false
   gem 'serverspec', '2.41.3'
   gem 'specinfra', '2.76.9'
 end

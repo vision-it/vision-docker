@@ -6,9 +6,9 @@ HOSTS:
     docker_preserve_image: true
     docker_cmd: '["/sbin/init"]'
     docker_image_commands:
-      - 'echo deb http://ftp.debian.org/debian jessie-backports main >> /etc/apt/sources.list'
       - 'apt-get update && apt-get install -y cron locales-all net-tools wget git vim apt-transport-https'
       - 'rm -f /usr/sbin/policy-rc.d'
 CONFIG:
   trace_limit: 200
   masterless: true
+  type: aio

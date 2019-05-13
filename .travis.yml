@@ -9,6 +9,10 @@ matrix:
   allow_failures:
     - env: STRICT_VARIABLES="yes" CHECK="rubocop"
       bundler_args: --without testing acceptance
+    - env: STRICT_VARIABLES="yes" CHECK="beaker"
+      bundler_args: --without rubocop
+      services: docker
+      sudo: required
   include:
     - env: STRICT_VARIABLES="yes" CHECK="rubocop"
       bundler_args: --without testing acceptance

@@ -10,3 +10,4 @@ HOSTS:
 CONFIG:
   trace_limit: 200
   masterless: true
+  type: aio

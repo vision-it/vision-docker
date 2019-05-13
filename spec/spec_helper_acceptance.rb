@@ -1,8 +1,9 @@
 require 'puppet'
 require 'beaker-rspec'
+require 'beaker/puppet_install_helper'
 require 'yaml'
 
-install_puppet_agent_on hosts, {}
+run_puppet_install_helper # unless ENV['BEAKER_provision'] == 'no'
 
 def copy_hiera_files_to(host, opts = {})
   scp_to host, opts[:hiera_yaml], opts[:target] + '/hiera.yaml'

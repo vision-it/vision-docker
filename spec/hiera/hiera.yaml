@@ -2,7 +2,7 @@
 :backends:
   - yaml
 :hierarchy:
-  - "os/%{::osfamily}"
+  - "os/%{::os.lsb.distcodename}"
   - testing
   - common
 :yaml:

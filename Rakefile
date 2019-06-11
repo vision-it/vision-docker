@@ -1,6 +1,9 @@
 require 'rspec-puppet/rake_task'
 require 'puppetlabs_spec_helper/rake_tasks'
 
+# default to puppet version 5.x
+ENV['BEAKER_PUPPET_COLLECTION'] = 'puppet5' unless ENV['BEAKER_PUPPET_COLLECTION']
+
 begin
   if Gem::Specification::find_by_name('puppet-lint')
 

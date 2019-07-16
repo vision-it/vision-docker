@@ -5,7 +5,7 @@ describe 'vision_docker::to_compose' do
     it 'run idempotently' do
       pp = <<-FILE
       vision_docker::to_compose { 'redis':
-        path => '/tmp',
+        path => '/tmp/swarm',
         compose => {
           'version' => '3',
           'services' => {
@@ -23,7 +23,7 @@ describe 'vision_docker::to_compose' do
     end
 
     context 'Compose File' do
-      describe file('/tmp/redis.yaml') do
+      describe file('/tmp/swarm/redis.yaml') do
         it { is_expected.to be_file }
         its(:content) { is_expected.to match 'version: \'3\'' }
         its(:content) { is_expected.to match 'image: redis:latest' }

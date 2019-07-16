@@ -6,6 +6,13 @@ define vision_docker::to_compose (
   String $mode = '0600',
   ) {
 
+  if !defined(File[$path]) {
+    file { $path:
+      ensure => directory,
+      mode   => '1750',
+    }
+  }
+
   file { "${path}/${title}.yaml":
     ensure  => present,
     owner   => $owner,

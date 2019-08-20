@@ -34,10 +34,11 @@ class vision_docker (
   }
 
   service { 'docker-system-prune':
-    ensure  => running,
-    enable  => true,
-    name    => 'docker-system-prune.timer',
-    require => [
+    ensure   => running,
+    enable   => true,
+    name     => 'docker-system-prune.timer',
+    provider => 'systemd',
+    require  => [
       File['/etc/systemd/system/docker-system-prune.timer'],
       File['/etc/systemd/system/docker-system-prune.service'],
     ],

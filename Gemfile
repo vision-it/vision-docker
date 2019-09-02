@@ -18,15 +18,15 @@ group :testing do
 end
 
 group :acceptance do
-  gem 'rbnacl', '< 5.0', :require => false
-  gem 'rbnacl-libsodium', :require => false
-  gem 'bcrypt_pbkdf', '< 2.0', :require => false
-  gem 'beaker', '4.6.0'
-  gem 'beaker-docker', '0.5.2'
-  gem 'beaker-rspec', '6.2.4'
-  gem "beaker-puppet_install_helper", :require => false
-  gem 'serverspec', '2.41.3'
-  gem 'specinfra', '2.76.9'
+  gem 'serverspec',                         :require => false
+  gem 'beaker-docker',                      :require => false
+  gem 'beaker-puppet',                      :require => false
+  gem 'beaker-puppet_install_helper',       :require => false
+  gem 'beaker-rspec',                       :require => false
+  gem 'rbnacl', '>= 4',                     :require => false
+  gem 'rbnacl-libsodium',                   :require => false
+  gem 'bcrypt_pbkdf',                       :require => false
+  gem 'ed25519',                            :require => false
 end
 
 group :development do

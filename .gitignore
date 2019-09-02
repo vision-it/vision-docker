@@ -20,7 +20,6 @@ pkg/
 coverage/
 
 # Gem & bundler related files we do not want persisted to the repository
-Gemfile.lock
 .bundle
 vendor/
 

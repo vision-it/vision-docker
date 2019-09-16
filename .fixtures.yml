@@ -2,13 +2,13 @@
 fixtures:
   repositories:
     stdlib:
-      ref: "4.24.0"
+      ref: "v6.0.0"
       repo: "https://github.com/puppetlabs/puppetlabs-stdlib"
     docker:
-      ref: "3.5.0"
+      ref: "v3.7.0"
       repo: "https://github.com/puppetlabs/puppetlabs-docker"
     apt:
-      ref: "5.0.1"
+      ref: "v7.1.0"
       repo: "https://github.com/puppetlabs/puppetlabs-apt"
   symlinks:
     vision_docker: '#{source_dir}'

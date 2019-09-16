@@ -6,6 +6,7 @@ define vision_docker::to_compose (
   String $mode = '0600',
   ) {
 
+  # ensure target directory exists
   if !defined(File[$path]) {
     file { $path:
       ensure => directory,

@@ -5,6 +5,7 @@ class vision_docker (
   String  $listen_address,
   Integer $listen_port,
   String  $version,
+  Optional[Hash] $registries = {},
 
 ) {
 
@@ -20,6 +21,10 @@ class vision_docker (
     tcp_bind => "tcp://${listen_address}:${listen_port}",
     version  => $version,
     require  => File['/etc/docker/daemon.json']
+  }
+
+  class { '::docker::registry_auth':
+    registries => $registries,
   }
 
   # Job for cleaning up unused Images

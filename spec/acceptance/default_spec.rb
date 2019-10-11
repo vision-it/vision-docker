@@ -18,7 +18,7 @@ describe 'vision_docker' do
 
     context 'Docker installed' do
       describe package('docker-ce') do
-        it { is_expected.to be_installed.by('apt').with_version('5:19.03.3~3-0~debian-buster') }
+        it { is_expected.to be_installed.by('apt').with_version('5:19.03.2~3-0~debian-buster') }
       end
     end
 

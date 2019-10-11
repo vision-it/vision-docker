@@ -7,7 +7,7 @@
 Include in the *Puppetfile*:
 
 ```
-mod vision_docker:
+mod 'vision_docker',
     :git => 'https://github.com/vision-it/vision-docker.git,
     :ref => 'production'
 ```

@@ -1,3 +1,4 @@
 ---
 vision_docker::listen_address: 10.0.0.0
 vision_docker::listen_port: 1234
+vision_docker::version: '5:19.03.2~3-0~debian-buster'

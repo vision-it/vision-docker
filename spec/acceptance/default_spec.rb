@@ -48,6 +48,12 @@ describe 'vision_docker' do
         its(:content) { is_expected.to match 'stable' }
         its(:content) { is_expected.to match 'docker' }
       end
+      describe file('/etc/apt/preferences.d/docker-ce.pref') do
+        it { is_expected.to be_file }
+        its(:content) { is_expected.to match 'Package: docker-ce' }
+        its(:content) { is_expected.to match 'Pin: version 5:19.03.2~3-0~debian-buster' }
+        its(:content) { is_expected.to match 'Priority: 1000' }
+      end
     end
   end
 end

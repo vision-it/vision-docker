@@ -27,6 +27,14 @@ class vision_docker (
     registries => $registries,
   }
 
+  # pin docker-ce version if specific version wanted
+  if $version != 'present' {
+    file { '/etc/apt/preferences.d/docker-ce.pref':
+      ensure  => present,
+      content => template('vision_docker/docker-pin.erb'),
+    }
+  }
+
   # Job for cleaning up unused Images
   file { '/etc/systemd/system/docker-system-prune.service':
     ensure  => present,

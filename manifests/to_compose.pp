@@ -1,10 +1,12 @@
 define vision_docker::to_compose (
+
   Hash $compose,
-  String $path = '/vision/data/swarm',
+  String $path  = '/vision/data/swarm',
   String $owner = 'root',
   String $group = 'root',
-  String $mode = '0600',
-  ) {
+  String $mode  = '0600',
+
+) {
 
   # ensure target directory exists
   if !defined(File[$path]) {
@@ -21,4 +23,5 @@ define vision_docker::to_compose (
     mode    => $mode,
     content => inline_template("# This file is managed by Puppet\n<%= @compose.to_yaml %>"),
   }
+
 }

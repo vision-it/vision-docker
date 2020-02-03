@@ -2,10 +2,10 @@
 fixtures:
   repositories:
     stdlib:
-      ref: "v6.0.0"
+      ref: "v6.2.0"
       repo: "https://github.com/puppetlabs/puppetlabs-stdlib"
     docker:
-      ref: "v3.7.0"
+      ref: "v3.9.1"
       repo: "https://github.com/puppetlabs/puppetlabs-docker"
     apt:
       ref: "v7.1.0"

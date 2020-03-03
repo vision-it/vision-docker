@@ -158,7 +158,7 @@ GEM
       json
       websocket (~> 1.0)
     rainbow (3.0.0)
-    rake (12.3.2)
+    rake (12.3.3)
     rb-readline (0.5.5)
     rbnacl (7.1.0)
       ffi
@@ -251,7 +251,7 @@ DEPENDENCIES
   metadata-json-lint (= 1.2.2)
   puppet (= 6.7.2)
   puppetlabs_spec_helper (= 2.13.1)
-  rake (= 12.3.2)
+  rake (= 12.3.3)
   rbnacl (>= 4)
   rbnacl-libsodium
   rspec-puppet (= 2.7.3)

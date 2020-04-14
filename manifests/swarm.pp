@@ -1,5 +1,16 @@
 # Class: vision_docker::swarm
 # ===========================
+#
+# Manages Docker Swarm installation
+#
+# Parameters
+# ----------
+#
+# @param manager_ip IP of Swarm manager
+# @param join_token Swarm Join Token
+# @param join Join a Swarm (bool)
+# @param init Init a Swarm (bool)
+#
 class vision_docker::swarm (
 
   String $manager_ip,

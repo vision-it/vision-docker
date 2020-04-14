@@ -1,5 +1,16 @@
 # Class: vision_docker
 # ===========================
+#
+# Manages basic Docker installation
+#
+# Parameters
+# ----------
+#
+# @param listen_address Docker TCP bind address
+# @param listen_port Docker TCP bind port
+# @param version To pin Docker CE Version
+# @param registries List of Docker registries
+#
 class vision_docker (
 
   String  $listen_address,

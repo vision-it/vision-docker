@@ -1,3 +1,13 @@
+# Define: vision_docker::to_compose
+# ===========================
+#
+# Docker-Compose File Resource
+#
+# Parameters
+# ----------
+#
+# @param compose Content of Docker-Compose File
+#
 define vision_docker::to_compose (
 
   Hash $compose,

@@ -1,4 +1,5 @@
 ---
 vision_docker::listen_address: 0.0.0.0
 vision_docker::listen_port: 2375
+vision_docker::userland_proxy: 'false'
 vision_docker::version: 'present' # present == latest

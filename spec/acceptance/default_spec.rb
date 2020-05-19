@@ -26,7 +26,7 @@ describe 'vision_docker' do
       describe file('/etc/docker/daemon.json') do
         it { is_expected.to be_file }
         its(:content) { is_expected.to match 'privileges' }
-        its(:content) { is_expected.to match 'userland' }
+        its(:content) { is_expected.to match '"userland-proxy": false' }
       end
     end
 

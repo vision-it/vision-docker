@@ -16,6 +16,7 @@ class vision_docker (
   String  $listen_address,
   Integer $listen_port,
   String  $version,
+  String  $userland_proxy,
   Optional[Hash] $registries = {},
 
 ) {
@@ -25,7 +26,7 @@ class vision_docker (
   }
   ->file { '/etc/docker/daemon.json':
     ensure  => present,
-    content => file('vision_docker/daemon.json'),
+    content => template('vision_docker/daemon.json.erb'),
   }
 
   class { '::docker':

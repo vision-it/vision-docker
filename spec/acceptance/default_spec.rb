@@ -12,6 +12,7 @@ describe 'vision_docker' do
         class { 'vision_docker': }
       FILE
 
+      # Docker within Docker not working
       apply_manifest(pp, catch_failures: false)
       apply_manifest(pp, catch_changes: false)
     end

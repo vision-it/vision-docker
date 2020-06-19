@@ -7,6 +7,7 @@
 # ----------
 #
 # @param compose Content of Docker-Compose File
+# @param path Directory in which the file is created
 #
 define vision_docker::to_compose (
 

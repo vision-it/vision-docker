@@ -18,13 +18,13 @@ describe 'vision_docker::to_compose' do
 
       FILE
 
-      apply_manifest(pp, catch_failures: false)
-      apply_manifest(pp, catch_changes: false)
+      apply_manifest(pp, catch_failures: true)
     end
 
     context 'Compose File' do
       describe file('/tmp/swarm/redis.yaml') do
         it { is_expected.to be_file }
+        its(:content) { is_expected.to match 'Puppet' }
         its(:content) { is_expected.to match 'version: \'3\'' }
         its(:content) { is_expected.to match 'image: redis:latest' }
       end

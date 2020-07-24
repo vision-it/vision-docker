@@ -20,8 +20,10 @@ matrix:
       bundler_args: --without rubocop acceptance
     - env: STRICT_VARIABLES="yes" CHECK="spec"
       bundler_args: --without rubocop acceptance
+    - env: STRICT_VARIABLES="yes" CHECK="beaker" BEAKER_set="debian9"
+      services: docker
+      sudo: required
     - env: STRICT_VARIABLES="yes" CHECK="beaker" BEAKER_set="debian10"
-      before_script: sh ./buster_fix.sh
       services: docker
       sudo: required
 notifications:

@@ -15,6 +15,7 @@ $ bundle exec rake
 $ bundle exec rake spec
 $ bundle exec rake lint
 $ bundle exec rake beaker
+$ bundle exec rake rubocop
 $ BEAKER_set=debian10 bundle exec rake beaker
 $ EAKER_destroy=no BEAKER_set=debian10 bundle exec rake beaker
 ```
